@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operations</title>
+  <style>
+    body {
+      background: #e0e5ec;
+    }
+
+    h1 {
+      position: relative;
+      text-align: center;
+      color: #353535;
+      font-size: 50px;
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    p {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      text-align: center;
+      font-size: 18px;
+      color: #676767;
+    }
+
+    .frame {
+      width: 90%;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    button {
+      margin: 20px;
+    }
+
+    .custom-btn {
+      width: 130px;
+      height: 40px;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 25px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+      box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+      outline: none;
+    }
+
+    /* 1 */
+    .btn-1 {
+      background: rgb(6, 14, 131);
+      background: linear-gradient(0deg, rgba(6, 14, 131, 1) 0%, rgba(12, 25, 180, 1) 100%);
+      border: none;
+    }
+
+    .btn-1:hover {
+      background: rgb(0, 3, 255);
+      background: linear-gradient(0deg, rgba(0, 3, 255, 1) 0%, rgba(2, 126, 251, 1) 100%);
+    }
+
+    /* 2 */
+    .btn-2 {
+      background: rgb(96, 9, 240);
+      background: linear-gradient(0deg, rgba(96, 9, 240, 1) 0%, rgba(129, 5, 240, 1) 100%);
+      border: none;
+
+    }
+
+    .btn-2:before {
+      height: 0%;
+      width: 2px;
+    }
+
+    .btn-2:hover {
+      box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .5),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+    }
+
+
+    /* 3 */
+    .btn-3 {
+      background: rgb(0, 172, 238);
+      background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+      line-height: 42px;
+      padding: 0;
+      border: none;
+
+    }
+
+    .btn-3 span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .btn-3:before,
+    .btn-3:after {
+      position: absolute;
+      content: "";
+      right: 0;
+      top: 0;
+      background: rgba(2, 126, 251, 1);
+      transition: all 0.3s ease;
+    }
+
+    .btn-3:before {
+      height: 0%;
+      width: 2px;
+    }
+
+    .btn-3:after {
+      width: 0%;
+      height: 2px;
+    }
+
+    .btn-3:hover {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .btn-3:hover:before {
+      height: 100%;
+    }
+
+    .btn-3:hover:after {
+      width: 100%;
+    }
+
+    .btn-3 span:hover {
+      color: rgba(2, 126, 251, 1);
+    }
+
+    .btn-3 span:before,
+    .btn-3 span:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      background: rgba(2, 126, 251, 1);
+      transition: all 0.3s ease;
+    }
+
+    .btn-3 span:before {
+      width: 2px;
+      height: 0%;
+    }
+
+    .btn-3 span:after {
+      width: 0%;
+      height: 2px;
+    }
+
+    .btn-3 span:hover:before {
+      height: 100%;
+    }
+
+    .btn-3 span:hover:after {
+      width: 100%;
+    }
+
+    /* 4 */
+    .btn-4 {
+      background-color: #4dccc6;
+      background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+      line-height: 42px;
+      padding: 0;
+      border: none;
+    }
+
+    .btn-4:hover {
+      background-color: #89d8d3;
+      background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+    }
+
+    .btn-4 span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .btn-4:before,
+    .btn-4:after {
+      position: absolute;
+      content: "";
+      right: 0;
+      top: 0;
+      box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-4:before {
+      height: 0%;
+      width: .1px;
+    }
+
+    .btn-4:after {
+      width: 0%;
+      height: .1px;
+    }
+
+    .btn-4:hover:before {
+      height: 100%;
+    }
+
+    .btn-4:hover:after {
+      width: 100%;
+    }
+
+    .btn-4 span:before,
+    .btn-4 span:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-4 span:before {
+      width: .1px;
+      height: 0%;
+    }
+
+    .btn-4 span:after {
+      width: 0%;
+      height: .1px;
+    }
+
+    .btn-4 span:hover:before {
+      height: 100%;
+    }
+
+    .btn-4 span:hover:after {
+      width: 100%;
+    }
+
+    .table-bordered {
+      border-width: 1px 1px 1px 0px;
+      border-style: solid solid solid none;
+      border-color: #DDD #DDD #DDD -moz-use-text-color;
+      border-collapse: collapse;
+      border-radius: 4px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+      min-width: 150px;
+      padding: 8px;
+      line-height: 20px;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid #DDD;
+    }
+
+    .table-bordered th {
+      background-color: #006A72;
+      color: #ffffff;
+    }
+
+    td.delete_row {
+      text-align: center;
+    }
+
+    .delete_row:hover {
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>CRUD Operations</h1>
+
+  <div class="frame">
+    <button class="custom-btn btn-1" onclick="getStudents()">GET</button>
+    <button class="custom-btn btn-2" onclick="insertStudent()">INSERT</button><br>
+    <div id="insertAreaId" style="visibility:hidden">
+      <form name="insertArea">
+        Id :<input type="text" id="insertCustomId"><br>
+        Name:<input type="text" id="insertNameId"><br>
+        Age :<input type="text" id="insertAgeId">
+      </form>
+      <button onclick="sendToInsert()">submit</button>
+    </div>
+  </div>"
+  <h1 style="visibility: hidden" id="successHeadingId">
+    <center>Inserted successfully</center>
+  </h1>
+
+  <div id="updateForm"
+    style="position:absolute;right:0px;top:60vh;width:250px;visibility: hidden;border: 1px solid black;align-items: center;justify-content: center;">
+    <form id="update">
+      Id: <input type="text" id="updateFormId"><br>
+      Name:<input type="text" id="updateFormName"><br>
+      Age: <input type="text" id="updateFormAge">
+      <h6 id="updateAcknow" style="visibility: hidden">Updated</h6>
+    </form>
+    <center><button onclick="sendToUpdate()">submit</button></center>
+  </div>
+  <table id="results" class="table-bordered" style="visibility: hidden;margin-left: auto;margin-right: auto;">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Delete Row</th>
+        <th>Update Row</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+
+    </tbody>
+  </table>
+
+  <script>
+    function updateStudent(k) {
+      document.getElementById("updateAcknow").style.visibility = "hidden";
+      document.getElementById("updateForm").style.visibility = "visible";
+    }
+    function sendToUpdate() {
+      let i_d = document.getElementById("updateFormId").value;
+      let n = document.getElementById("updateFormName").value;
+      let a = document.getElementById("updateFormAge").value;
+      // console.log(name + " " + age);\
+      let stu = {
+        id: i_d,
+        name: n,
+        age: a
+      }
+      fetch(`http://localhost:4000/updatestu/${i_d}`,
+        {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+          },
+          body: JSON.stringify(stu)
+        }).then();
+      document.getElementById("insertAreaId").style.visibility = "hidden";
+
+      console.log("updated");
+
+      document.getElementById("updateAcknow").style.visibility = "visible";
+      getStudents();
+      document.getElementById("updateForm").style.visibility = "hidden";
+      document.getElementById("updateAcknow").style.visibility = "hidden";
+
+    }
+    async function getStudents() {
+      document.getElementById("successHeadingId").style.visibility = "hidden";
+      document.getElementById("insertAreaId").style.visibility = "hidden";
+      document.getElementById("results").style.visibility = "visible";
+      let response = await fetch("http://localhost:4000/stu");
+      let result = await response.json();
+      console.log(result);
+      var tbody = '';
+      const tableBody = document.getElementById("tableBody");
+      result.forEach(element => {
+        tbody += `<tr>
+              <td>${element._id}</td>
+              <td>${element.name}</td>
+              <td>${element.age}</td>
+              <td><button onclick="deleteStudent(${element._id})">Delete</button></td>
+              <td><button onclick="updateStudent(${element._id})">Update</button></td>           
+            </tr>`
+
+      });
+      tableBody.innerHTML = tbody;
+
+
+    }
+
+
+    function deleteStudent(k) {
+      console.log(k);
+
+      fetch(`http://localhost:4000/deletestu/${k}`,
+        {
+          method: "DELETE",
+          headers: {
+            "content-type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+          }
+        })
+      getStudents();
+    }
+
+    function insertStudent() {
+      document.getElementById("successHeadingId").style.visibility = "hidden";
+      document.getElementById("results").style.visibility = "hidden"
+      document.getElementById("insertAreaId").style.visibility = "visible";
+    }
+
+    function sendToInsert() {
+      let i_d = document.getElementById("insertCustomId").value;
+      let n = document.getElementById("insertNameId").value;
+      let a = document.getElementById("insertAgeId").value;
+      // console.log(name + " " + age);\
+      let stu = {
+        id: i_d,
+        name: n,
+        age: a
+      }
+      fetch("http://localhost:4000/addstu",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+          },
+          body: JSON.stringify(stu)
+        }).then();
+      document.getElementById("insertAreaId").style.visibility = "hidden";
+      document.getElementById("successHeadingId").style.visibility = "visible";
+      setTimeout(function () {
+        location.reload();
+      }, 2000);
+    }
+
+  </script>
+</body>
+
+</html>
